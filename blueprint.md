@@ -2,17 +2,20 @@
 A framework-less web project using HTML, CSS, and JavaScript, designed to demonstrate modern web standards and responsive design.
 
 # Project Features
-- Simple "Hello World" index page.
-- Basic structure with `index.html`, `style.css`, and `main.js`.
-- Connected to GitHub repository `runningbong/product-initiative-work.git`.
+- Modern Theme Switcher (Dark/Light mode).
+- Partnership Inquiry Form with Formspree integration.
+- Responsive design using CSS Baseline features.
+- High-quality aesthetics with OKLCH colors and soft shadows.
 
-# Current Implementation Plan: Dark and White Mode
-The goal is to implement a seamless theme switching mechanism between Dark and White modes.
+# Current Implementation Plan: Responsive Form Optimization
+The goal is to ensure the partnership form and overall layout are fully responsive and visually appealing on all devices, especially mobile.
 
 ## Plan & Steps
-1.  **Define CSS Variables**: In `style.css`, define `--bg-color`, `--text-color`, and other theme-related variables for both `:root` (White mode default) and a `.dark-theme` class.
-2.  **Add Theme Toggle UI**: Add a button to `index.html` that allows users to switch between themes.
-3.  **Implement Toggle Logic**: In `main.js`, add event listeners to the toggle button to switch the `.dark-theme` class on the `body` element.
-4.  **Persist Theme Preference**: Use `localStorage` in `main.js` to remember the user's theme preference across sessions.
-5.  **Refine Visuals**: Use modern CSS features like `:has()`, Container Queries, and `oklch` color spaces as recommended in `GEMINI.md`.
-6.  **Verify & Deploy**: Test the toggle locally, then commit and push to the GitHub repository. Finally, initialize and deploy to Firebase Hosting if requested.
+1.  **Refine Global Spacing**: Use logical properties (e.g., `padding-block`, `margin-inline`) and `clamp()` for responsive spacing.
+2.  **Optimize Form Layout**: Use CSS Grid and Container Queries to adjust the form layout based on its container size.
+3.  **Mobile-First Adjustments**: 
+    - Adjust `body` padding for smaller viewports.
+    - Scale down `form-container` padding on mobile.
+    - Ensure the floating theme toggle doesn't obstruct content.
+4.  **Typography Scaling**: Fine-tune font sizes for headings and labels using responsive units.
+5.  **Validation**: Test the layout across different screen widths (mobile, tablet, desktop) using the browser preview.
