@@ -1,21 +1,21 @@
 # Project Overview
-A framework-less web project using HTML, CSS, and JavaScript, designed to demonstrate modern web standards and responsive design.
+A premium one-page scrolling website for a high-end bio-cosmetic brand, focusing on youthful restoration and advanced skin technology.
 
 # Project Features
-- Modern Theme Switcher (Dark/Light mode).
-- Partnership Inquiry Form with Formspree integration.
-- Responsive design using CSS Baseline features.
-- High-quality aesthetics with OKLCH colors and soft shadows.
+- **One-Page Scrolling**: Seamless transitions between sections.
+- **Hero Section**: High-impact visual with the "Return to my Youthful Age!" slogan.
+- **Product Detail**: Detailed breakdown of unique textures, effects, and high-concentration ingredients.
+- **Bio-Technology**: Showcase of proprietary Freeze-Drying Technology and industry patents.
+- **Advanced Aesthetics**: Clinical yet luxurious design using OKLCH colors, elegant typography, and subtle textures.
+- **Scroll Animations**: Reveal-on-scroll effects using Intersection Observer.
 
-# Current Implementation Plan: Responsive Form Optimization
-The goal is to ensure the partnership form and overall layout are fully responsive and visually appealing on all devices, especially mobile.
+# Current Implementation Plan: Premium Brand Landing Page
+Implementing the three core sections with modern web standards and responsive design.
 
 ## Plan & Steps
-1.  **Refine Global Spacing**: Use logical properties (e.g., `padding-block`, `margin-inline`) and `clamp()` for responsive spacing.
-2.  **Optimize Form Layout**: Use CSS Grid and Container Queries to adjust the form layout based on its container size.
-3.  **Mobile-First Adjustments**: 
-    - Adjust `body` padding for smaller viewports.
-    - Scale down `form-container` padding on mobile.
-    - Ensure the floating theme toggle doesn't obstruct content.
-4.  **Typography Scaling**: Fine-tune font sizes for headings and labels using responsive units.
-5.  **Validation**: Test the layout across different screen widths (mobile, tablet, desktop) using the browser preview.
+1.  **Define Visual Language**: Set up a "Clean Luxury" palette (Pearl Whites, Sage Green accents, Deep Charcoal) in `style.css`.
+2.  **Structure HTML**: Create the three main sections (Hero, Product, Bio-Tech) with semantic tags.
+3.  **Implement Scroll Animations**: Use JavaScript to add "reveal" classes as elements enter the viewport.
+4.  **Refine Typography**: Use expressive serif fonts for headings and clean sans-serif for technical details.
+5.  **Add Visual Elements**: Use CSS-based gradients and shapes to simulate premium cosmetic packaging/textures if images aren't provided.
+6.  **Responsive Polish**: Ensure the experience is premium on both mobile and desktop.

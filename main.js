@@ -1,27 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.getElementById('theme-toggle');
-  const body = document.body;
-  const btnText = toggleBtn.querySelector('.btn-text');
+  // Intersection Observer for Reveal Animations
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-  // Load saved theme from localStorage
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    body.classList.add('dark-theme');
-    updateButtonContent(true);
-  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Optional: stop observing once revealed
+        // observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
 
-  toggleBtn.addEventListener('click', () => {
-    const isDark = body.classList.toggle('dark-theme');
-    const newTheme = isDark ? 'dark' : 'light';
-    localStorage.setItem('theme', newTheme);
-    updateButtonContent(isDark);
+  // Select all elements with the 'reveal' class
+  const revealElements = document.querySelectorAll('.reveal');
+  revealElements.forEach(el => observer.observe(el));
+
+  // Dynamic Navigation Highlight
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').includes(current)) {
+        link.style.color = 'var(--accent)';
+      } else {
+        link.style.color = 'var(--text-main)';
+      }
+    });
   });
 
-  function updateButtonContent(isDark) {
-    if (isDark) {
-      btnText.textContent = 'Switch to White Mode';
-    } else {
-      btnText.textContent = 'Switch to Dark Mode';
-    }
-  }
+  // Smooth Scroll handling for Safari/Older browsers if needed
+  // (Standard CSS scroll-behavior: smooth is usually enough now)
 });

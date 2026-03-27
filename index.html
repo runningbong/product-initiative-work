@@ -3,54 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modern Theme Switcher & Partnership Portal</title>
+  <title>Youthful Restoration | Bio-Cosmetic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <header>
-    <button id="theme-toggle" class="theme-toggle-btn">
-      <span class="btn-text">Switch to Dark Mode</span>
-    </button>
+  <header class="main-nav">
+    <div class="logo">BIO-COSMETIC</div>
+    <nav>
+      <a href="#hero">HOME</a>
+      <a href="#product">PRODUCT</a>
+      <a href="#bio-tech">BIO-TECH</a>
+    </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Hello, World!</h1>
-      <p class="subtitle">Experience the beauty of Dark and White modes.</p>
+    <!-- 1. Hero Section -->
+    <section id="hero" class="hero-section reveal">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h2 class="hero-subtitle">RESTORATIVE SKINCARE</h2>
+        <h1 class="hero-title">Return to my<br><span class="highlight">Youthful Age!</span></h1>
+        <p class="hero-desc">Science-driven beauty for timeless skin radiance.</p>
+        <div class="cta-scroll">SCROLL TO DISCOVER</div>
+      </div>
     </section>
 
-    <section id="partnership" class="form-container">
-      <h2>Partnership Inquiry</h2>
-      <p>Looking to collaborate? Fill out the form below and our team will get back to you shortly.</p>
-      
-      <form action="https://formspree.io/f/mykbznrq" method="POST" class="business-form">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="John Doe" required>
+    <!-- 2. Product Detail Section -->
+    <section id="product" class="product-section">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="tag">PREMIUM CARE</span>
+          <h2>The Art of Formulation</h2>
+        </header>
+
+        <div class="product-grid">
+          <!-- Textures -->
+          <div class="feature-card reveal">
+            <div class="icon">✨</div>
+            <h3>Innovative Texture</h3>
+            <p>Experience the <strong>Non-sticky ampoule</strong> that absorbs deeply, paired with our <strong>Freeze-dried capsule</strong> that melts instantly upon contact with your skin.</p>
+          </div>
+
+          <!-- Effects -->
+          <div class="feature-card reveal">
+            <div class="icon">💫</div>
+            <h3>Visible Transformation</h3>
+            <ul class="effect-list">
+              <li>Increase Skin Elasticity</li>
+              <li>Powerful Hydration</li>
+              <li>Refine Skin Texture & Tone</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="company">Company Name</label>
-          <input type="text" id="company" name="company" placeholder="Acme Corp" required>
+        <!-- Ingredients -->
+        <div class="ingredient-showcase reveal">
+          <h3>The Core Ingredients</h3>
+          <div class="ingredient-grid">
+            <div class="ing-item">
+              <span class="value">10,000ppm</span>
+              <span class="name">Cica Exosome</span>
+            </div>
+            <div class="ing-item">
+              <span class="value">10,000ppm</span>
+              <span class="name">Probiotics</span>
+            </div>
+            <div class="ing-item">
+              <span class="value">5,000ppm</span>
+              <span class="name">Neuropeptide Complex</span>
+            </div>
+            <div class="ing-item">
+              <span class="value">499,000ppm</span>
+              <span class="name">Ultra Collagen</span>
+            </div>
+            <div class="ing-item">
+              <span class="value">99%</span>
+              <span class="name">Hyaluronic Acid</span>
+            </div>
+          </div>
+          <div class="safety-badge">
+            <span class="badge-icon">🌿</span>
+            <span class="badge-text">EWG Green Grade Ingredients Only</span>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="form-group">
-          <label for="email">Business Email</label>
-          <input type="email" id="email" name="_replyto" placeholder="john@company.com" required>
+    <!-- 3. Bio-Technology Section -->
+    <section id="bio-tech" class="tech-section">
+      <div class="container">
+        <div class="tech-layout">
+          <div class="tech-content reveal">
+            <span class="tag">EXCLUSIVE TECHNOLOGY</span>
+            <h2>Freeze-Drying Technology</h2>
+            <p class="tech-quote">"Delivering 100% of exosome function to skin without chemical or physical damage."</p>
+            <div class="trust-points">
+              <div class="point">
+                <strong>20 Years of Tradition</strong>
+                <p>Rooted in two decades of research and heritage.</p>
+              </div>
+              <div class="point">
+                <strong>Multiple Patents Held</strong>
+                <p>Proprietary techniques verified by global standards.</p>
+              </div>
+            </div>
+            <div class="certifications">
+              <!-- Space for certification marks -->
+              <div class="cert-box">ISO Certified</div>
+              <div class="cert-box">GMP Standard</div>
+              <div class="cert-box">Patent #9422</div>
+            </div>
+          </div>
+          <div class="tech-visual reveal">
+            <!-- Visual representation of technology -->
+            <div class="tech-abstract">
+              <div class="core-node"></div>
+              <div class="orbit"></div>
+              <div class="orbit"></div>
+            </div>
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="message">Partnership Vision</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us how we can work together..." required></textarea>
-        </div>
-
-        <!-- Formspree hidden configuration -->
-        <input type="hidden" name="_subject" value="New Partnership Inquiry!">
-        
-        <button type="submit" class="submit-btn">Send Proposal</button>
-      </form>
+      </div>
     </section>
   </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2026 BIO-COSMETIC HERITAGE. All rights reserved.</p>
+  </footer>
 
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
