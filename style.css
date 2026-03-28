@@ -99,51 +99,40 @@ nav a:hover {
 
 /* Hero Section */
 .hero-section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   background: var(--bg-primary);
   position: relative;
-  padding-top: 80px;
+  padding: 120px 0 80px;
   overflow: hidden;
 }
 
-.hero-visual {
+.hero-bg-accent {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 1000px;
-  height: 80%;
+  top: -10%;
+  right: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+  opacity: 0.4;
+  filter: blur(60px);
   z-index: 0;
-  opacity: 0.3;
-  filter: blur(2px);
-  pointer-events: none;
 }
 
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 3rem;
-  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, transparent 0%, var(--bg-primary) 100%);
-  opacity: 0.8;
-  z-index: 1;
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
+  max-width: 900px;
+  width: 100%;
 }
 
 .hero-subtitle {
@@ -153,39 +142,105 @@ nav a:hover {
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
   color: var(--text-muted);
+  text-transform: uppercase;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   line-height: 1.1;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  color: var(--text-main);
 }
 
 .hero-title .highlight {
   color: var(--accent);
   font-style: italic;
+  position: relative;
+}
+
+/* Main Visual Centerpiece */
+.hero-main-visual {
+  margin-bottom: 4rem;
+  perspective: 1000px;
+}
+
+.image-wrapper {
+  position: relative;
+  width: clamp(280px, 50vw, 450px);
+  aspect-ratio: 4/5;
+  margin: 0 auto;
+  border-radius: 2rem;
+  background: var(--white);
+  padding: 1rem;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    0 40px 80px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.02) rotateY(5deg);
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  display: block;
+}
+
+.image-glow {
+  position: absolute;
+  inset: -20px;
+  background: var(--accent);
+  opacity: 0.1;
+  filter: blur(40px);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .hero-desc {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   color: var(--text-muted);
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto 3rem;
 }
 
 .cta-scroll {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   letter-spacing: 0.3em;
   font-weight: 700;
   color: var(--accent);
-  animation: bounce 2s infinite;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 10px;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-  40% {transform: translateY(-10px);}
-  60% {transform: translateY(-5px);}
+.cta-scroll::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollLine 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes scrollLine {
+  0% { transform: translateX(-50%) scaleY(0); transform-origin: top; opacity: 0; }
+  50% { transform: translateX(-50%) scaleY(1); transform-origin: top; opacity: 1; }
+  51% { transform: translateX(-50%) scaleY(1); transform-origin: bottom; opacity: 1; }
+  100% { transform: translateX(-50%) scaleY(0); transform-origin: bottom; opacity: 0; }
 }
 
 /* Product Section */
